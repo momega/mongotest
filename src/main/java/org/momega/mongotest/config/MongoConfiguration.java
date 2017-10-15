@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 
-import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 
@@ -25,7 +24,7 @@ public class MongoConfiguration extends AbstractMongoConfiguration {
 	}
 
 	@Override
-	public Mongo mongo() throws Exception {
+	public MongoClient mongoClient() {
 		 return new MongoClient(uri());
 	}
 

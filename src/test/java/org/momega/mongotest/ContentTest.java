@@ -33,7 +33,7 @@ public class ContentTest {
 		
 		d = documentRepository.save(d);
 		
-		d = documentRepository.findOne(d.getId());
+		d = documentRepository.findById(d.getId()).get();
 		
 		Assert.assertEquals(new String(content), new String(d.getContent()));
 	}
